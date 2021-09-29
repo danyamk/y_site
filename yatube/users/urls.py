@@ -17,4 +17,3 @@ urlpatterns = [
     path('password_reset/',
          PasswordResetView.as_view(), name='password_reset_form'),
 ]
-
