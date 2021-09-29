@@ -32,11 +32,9 @@
         </aside>
         <article class="col-12 col-md-9">
           <p> {{ post.text }} </p>
-          {% if request.user.is_authenticated %}
-            <a class="btn btn-primary" href="{% url 'posts:post_edit' post.id %}">
-              Редактировать запись
-            </a>    
-          {% endif %}            
+          <a class="btn btn-primary" href="{% url 'posts:post_edit' post.id %}">
+            Редактировать запись
+          </a>                
         </article>
       </div>     
     </div>
