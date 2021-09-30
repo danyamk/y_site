@@ -18,7 +18,7 @@
               <a class="nav-link" href="{% url 'posts:post_create'%}">Новая запись</a>
             </li>
             <li class="nav-item"> 
-              <a class="nav-link link-light" href="<!--  -->">Изменить пароль</a>
+              <a class="nav-link link-light" href="{% url 'users:password_reset_form' %}">Изменить пароль</a>
             </li>
             <li class="nav-item"> 
               <a class="nav-link link-light" href="{% url 'users:logout' %}">Выйти</a>
@@ -35,7 +35,6 @@
             </li>
         {% endif %}
       </ul>
-      {# Конец добавленого в спринте #}
     </div>
   </nav>      
 </header> 

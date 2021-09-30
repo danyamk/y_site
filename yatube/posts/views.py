@@ -40,7 +40,7 @@ def profile(request, username):
     page = request.GET.get('page')
     page_obj = paginator.get_page(page)
     context = {
-        'user': new_user,
+        'username': new_user,
         'post_count': posts_count,
         'group': group,
         'page_obj': page_obj,
@@ -50,11 +50,11 @@ def profile(request, username):
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
-    user = get_object_or_404(User, posts=post)
-    posts_count = user.posts.count()
+    username = get_object_or_404(User, posts=post)
+    posts_count = username.posts.count()
     context = {
         'post': post,
-        'user': user,
+        'username': username,
         'posts_count': posts_count,
     }
     return render(request, 'posts/post_detail.html', context)
