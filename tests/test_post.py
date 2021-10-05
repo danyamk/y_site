@@ -8,7 +8,7 @@ from tests.utils import get_field_from_context
 
 class TestPostView:
 
-    @pytest.mark.post(transaction=True)
+    @pytest.mark.django_db(transaction=True)
     def test_post_view_get(self, client, post_with_group):
         try:
             response = client.get(f'/posts/{post_with_group.id}')

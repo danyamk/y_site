@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from posts.forms import PostForm
 from posts.models import Group, Post
+import users
 
 
 def index(request):
@@ -68,7 +69,7 @@ def post_create(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('posts:index')
+            return redirect('posts:profile', post.author)
         return render(request, 'posts/create_post.html', {'form': form})
     else:
         form = PostForm()
@@ -83,6 +84,6 @@ def post_edit(request, post_id):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-            return redirect('index')
+            return redirect('posts:post_edit', post.id)
     form = PostForm(instance=post)
     return render(request, 'posts/create_post.html', {'form': form})
