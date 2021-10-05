@@ -5,7 +5,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from posts.forms import PostForm
 from posts.models import Group, Post
-import users
 
 
 def index(request):
