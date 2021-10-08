@@ -17,7 +17,7 @@ class Post(models.Model):
         models.SET_NULL,
         blank=True,
         null=True,
-        related_name='posts'
+        related_name='group'
     )
 
 

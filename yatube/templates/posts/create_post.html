@@ -22,24 +22,24 @@
         <form action="{% url 'posts:post_create' %}" method="post">
           {% csrf_token %}
           {% for field in form %}
-          {% if form.errors %}
-          {% for error in field.errors %}
-          <div class="alert alert-danger">
-            {{ error|escape }}
-          </div>
-          {% endfor %}
-          {% for error in form.non_field_errors %}
-          <div class="alert alert-danger">
-            {{ error|escape }}
-          </div>
-          {% endfor %}
-          {% endif %}
-          <div class="form-group row my-3">
-            <label>
-              {{ field.label }}
-            </label>
-          </div>
-          {{ field|addclass:'form-control' }}
+            {% if form.errors %}
+              {% for error in field.errors %}
+                <div class="alert alert-danger">
+                  {{ error|escape }}
+                </div>
+              {% endfor %}
+              {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                  {{ error|escape }}
+                </div>
+              {% endfor %}
+            {% endif %}
+            <div class="form-group row my-3">
+              <label>
+                {{ field.label }}
+              </label>
+            </div>
+            {{ field|addclass:'form-control' }}
           {% endfor %}
           <p></p>
           <div class="d-flex justify-content-end">

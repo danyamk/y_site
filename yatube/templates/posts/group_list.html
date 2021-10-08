@@ -19,7 +19,7 @@
                   Дата публикации: {{ post.pub_date|date:"d E Y" }}
                 </li>
               </ul>
-              <p>{{ post.text }}</p>
+              <p>{{ post.text|linebreaksbr }}</p>
             </article>
           {% if not forloop.last %}<hr>{% endif %}
           {% endfor %}
